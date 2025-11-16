@@ -9,7 +9,7 @@ print("3 - Sair\n")
 opcao = input("Escolha uma opção: ")
 
 temaProfissoes = ["ADVOGADO", "PILOTO", "MEDICO", "ENGENHEIRO", "PROFESSOR", "PROGRAMADOR", "ENFERMEIRO", "FARMACEUTICO", "ARQUITETO", "DESIGNER", "MOTORISTA", "VENDEDOR", "GERENTE", "ARTISTA", "PSICOLOGO", "BIOLOGO", "QUIMICO", "FISICO", "ATLETA", "ATENDENTE"]
-
+temaTransporte = ["CARRUAGEM", "CANOA", "BONDE", "TUK-TUK", "BALAO", "CAMELO", "CAVALO", "TELEFERICO", "SUBMARINO", "BALSA", "FOGUETE", "LAMBRETA", "PLANADOR"]
 
 if opcao == "1":
     
