@@ -4,9 +4,12 @@ print("===============================")
 print("          JOGO DA FORCA")
 print("===============================\n")
 
-print("1 - Jogar")
-print("2 - Selecionar um tema")
-print("3 - Sair\n")
+print("Escolha um tema")
+print("1 - Profissões")
+print("2 - Objetos")
+print("3 - Meios de transporte")
+print("4 - ")
+print("5 - Sair\n")
 
 opcao = input("Escolha uma opção: ")
 
