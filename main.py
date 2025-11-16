@@ -72,7 +72,7 @@ while acertos != len(palavra) and erros < 4:
         
     if acertouNaRodada:
         print("Acertou!")
-        acertos = palavraUsuario.count("_") ^ len(palavra)  # só para atualizar
+        acertos = palavraUsuario.count("_") ^ len(palavra)  
         acertos = len([l for l in palavraUsuario if l != "_"])
     else:
         erros += 1
