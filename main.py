@@ -3,10 +3,13 @@ print("          JOGO DA FORCA")
 print("===============================\n")
 
 print("1 - Jogar")
-print("2 - Selecionar dificuldade")
+print("2 - Selecionar um tema")
 print("3 - Sair\n")
 
 opcao = input("Escolha uma opção: ")
+
+temaProfissoes = ["ADVOGADO", "PILOTO", "MEDICO", "ENGENHEIRO", "PROFESSOR", "PROGRAMADOR", "ENFERMEIRO", "FARMACEUTICO", "ARQUITETO", "DESIGNER", "MOTORISTA", "VENDEDOR", "GERENTE", "ARTISTA", "PSICOLOGO", "BIOLOGO", "QUIMICO", "FISICO", "ATLETA", "ATENDENTE"]
+
 
 if opcao == "1":
     
