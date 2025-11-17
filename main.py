@@ -30,7 +30,7 @@ elif opcao == "2":
 elif opcao == "3":
     palavra = random.choice(temaTransporte)
 
-print("\nPalavra selecionada! Vamos jogar!\n")
+print("\nTema selecionado! Vamos jogar!\n")
 
 print("  _______")
 print(" |/      |")
@@ -41,10 +41,13 @@ print(" | ")
 print(" |")
 print("_|___ \n")
 
-palavraUsuario = ["_"] * len(palavra)
+palavraUsuario = []
+for i in range(len(palavra)):
+    palavraUsuario.append("_")
 
 print("Palavra:\n")
-print(" ".join(palavraUsuario))
+for letra in palavraUsuario:
+    print(letra, end=" ")
 print("\n")
 
 acertos = 0    
@@ -53,35 +56,40 @@ letrasTentadas = []
 
 while acertos != len(palavra) and erros < 4:
 
-    tentativa = input("Digite uma letra: ").strip()
+    tentativa = input("Digite uma letra: ")
 
-    if tentativa == "":
+    if tentativa == "" or tentativa == " ":
         continue
 
-    letraTentativa = tentativa[0].upper()
+    letraTentativa = tentativa[0]
+    letraTentativa = letraTentativa.upper()
 
     if letraTentativa in letrasTentadas:
-        print(f"Você já tentou a letra '{letraTentativa}'.")
+        print("Você já tentou a letra", letraTentativa)
         continue
             
     letrasTentadas.append(letraTentativa)
         
     acertouNaRodada = False
         
-    for i in range(len(palavra)):
+    i = 0
+    while i < len(palavra):
         if letraTentativa == palavra[i]:
             palavraUsuario[i] = palavra[i]
             acertouNaRodada = True
+        i = i + 1
         
-    if acertouNaRodada:
+    if acertouNaRodada == True:
         print("Acertou!")
-        acertos = palavraUsuario.count("_") ^ len(palavra)  
-        acertos = len([l for l in palavraUsuario if l != "_"])
+        acertos = 0
+        for letra in palavraUsuario:
+            if letra != "_":
+                acertos = acertos + 1
     else:
-        erros += 1
+        erros = erros + 1
         print("Errou!")
             
-    if(erros == 1):
+    if erros == 1:
         print("  _______")
         print(" |/      |")
         print(" |      (_)")
@@ -90,25 +98,25 @@ while acertos != len(palavra) and erros < 4:
         print(" | ")
         print(" |")
         print("_|___ \n")
-    elif(erros == 2):
+    elif erros == 2:
         print("  _______")
         print(" |/      |")
         print(" |      (_)")
         print(" |      \\|/")
-        print(" |     ")
-        print(" |     ")
+        print(" |")
+        print(" |")
         print(" |")
         print("_|___ \n")
-    elif(erros == 3):
+    elif erros == 3:
         print("  _______")
         print(" |/      |")
         print(" |      (_)")
         print(" |      \\|/")
         print(" |       |")
-        print(" |     ")
+        print(" |")
         print(" |")
         print("_|___ \n")
-    elif(erros == 4):
+    elif erros == 4:
         print("  _______")
         print(" |/      |")
         print(" |      (_)")
@@ -119,35 +127,12 @@ while acertos != len(palavra) and erros < 4:
         print("_|___ \n")
 
     print("\nPalavra Atual:")
-    print(" ".join(palavraUsuario))
-    print(f"\nErros: {erros}/4. Letras Tentadas: {letrasTentadas}")
+    for letra in palavraUsuario:
+        print(letra, end=" ")
+    print()
+    print("Erros:", erros, "/4. Letras Tentadas:", letrasTentadas)
 
 if acertos == len(palavra):
     print("\nParabéns! Você venceu!")
 else:
-    print(f"\nFim de jogo! A palavra era: {palavra}")
-
-
-
-
-
-   
-
-
-
-    
-
-
-    
-
-
-
-
-   
-
-
-
-    
-
-
-    
+    print("\nFim de jogo! A palavra era:", palavra)
